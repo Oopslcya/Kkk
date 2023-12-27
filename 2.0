@@ -1,12 +1,12 @@
-name: WPS解锁本地会员
+name: WPShuiyuan
 desc: WPS解锁本地会员
 icon: https://raw.githubusercontent.com/deezertidal/private/main/icons/wps.png
 
 http:
   mitm:
     hostname:
-      - 'account.wps.cn'
-      - '*account.wps.com'
+      - '*.wps.cn' # 更新为 Loon 配置中的域名
+
   script:
     rules:
       - match: ^https?:\/\/(account|drive|vas|userinfo.docer)\.wps\.cn\/(.*api\/(v3\/(mine\/vips|spaces)|users\/\d+\/overview|v1\/list_purchase_info)|user\/v1\/vip_dl_times)
