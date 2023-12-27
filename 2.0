@@ -3,10 +3,10 @@ desc: 点亮超级会员图标，解锁超级会员皮肤解锁部分超会权�
 icon: https://raw.githubusercontent.com/Keze7/Kaze/main/Loon/E644FFEC-74F3-4B40-BFD4-CB6FB168E515.png
 
 http:
-  mitm:
+  mitm: #!replace
     hostname:
       - '*.wps.cn'
-  script:
+  script: #!replace
     rules:
       - type: http-response
         match: ^https?:\/\/(account|drive|vas|userinfo.docer)\.wps\.cn\/(.*api\/(v3\/(mine\/vips|spaces)|users\/\d+\/overview|v1\/list_purchase_info)|user\/v1\/vip_dl_times)
