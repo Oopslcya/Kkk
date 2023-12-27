@@ -5,7 +5,7 @@ icon: https://raw.githubusercontent.com/deezertidal/private/main/icons/wps.png
 http:
   mitm:
     hostname:
-      - '*.wps.cn' # 更新为 Loon 配置中的域名
+      - '*.wps.cn' 
 
   script:
     rules:
