@@ -5,7 +5,7 @@ icon: https://raw.githubusercontent.com/deezertidal/private/main/icons/wps.png
 http:
   mitm:
     - "account.wps.cn"
-    - "*.wps.cn" # 从 Loon 配置中添加
+    - "*.wps.cn"
 
   script:
     - match: ^https?:\/\/(account|drive|vas|userinfo.docer)\.wps\.cn\/(.*api\/(v3\/(mine\/vips|spaces)|users\/\d+\/overview|v1\/list_purchase_info)|user\/v1\/vip_dl_times)
