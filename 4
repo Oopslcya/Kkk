@@ -1,11 +1,24 @@
 #SUBSCRIBED https://whatshub.top/stoverride/WPS.stoverride
-#!desc=WPS解锁本地会员
+#!desc=WPShuiyuan1
 #!icon=https://raw.githubusercontent.com/deezertidal/private/main/icons/wps.png
 #!author=I-am-R-E name: WPShuiyuan
-desc: WPS解锁本地会员
+desc: WPShuiyuan1
 
-[MITM]
-hostname = *.wps.cn, *account.wps.com
+mitm:
+- "account.wps.cn"
+- "*account.wps.com"
 
-[Script]
-http-response ^https?:\/\/(account|drive|vas|userinfo.docer)\.wps\.cn\/(.*api\/(v3\/(mine\/vips|spaces)|users\/\d+\/overview|v1\/list_purchase_info)|user\/v1\/vip_dl_times) script-path=https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/WPSOffice/Script/WS.js, requires-body=true, tag=WPShuiyuan
+script:
+- match: https?:\/\/(account|drive|vas|userinfo.docer)\.wps\.cn\/(.*api\/(v3\/(mine\/vips|spaces)|users\/\d+\/overview|v1\/list_purchase_info)|user\/v1\/vip_dl_times)
+  name: WPShuiyuan1
+  type: response
+  require-body: true
+  timeout: 10
+  script-path: https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/WPSOffice/Script/WS.js
+
+script-providers:
+  WPShuiyuan1:
+    url: https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/WPSOffice/Script/WS.js
+    requires-body: true
+    timeout: 10
+    interval: 86400
