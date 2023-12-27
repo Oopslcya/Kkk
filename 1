@@ -1,13 +1,13 @@
 #SUBSCRIBED https://whatshub.top/stoverride/WPS.stoverride
 #！desc=WPS解锁本地会员
 #licon= https://raw.githubusercontent.com/deezertidal/private/main/icons/wps.png
-#! author=1-am-R-E name: WPShuiyuan
+#! author=I-am-R-E name: WPShuiyuan
 desc:WPS解锁本地会员
 http:
 mitm:
 - "account.wps.cn"
 - "*account.wps.com" script:
-- match: https?:\/\/.*?accountl.wps\.(com/cn) (:\d+)?\/apil/users\/\w+\/
+- match: https?:\/\/.*?accountl.wpsl.(com/cn) (:\d+)?\/apil/users\/\w+\/
 overview$
 name: WPShuiyuan1
 type: response require-body: true timeout: 10
@@ -15,3 +15,4 @@ script-providers:
 WPShuiyuan1:
 url: https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/
 WPSOffice/Script/WS.js, requires-body=true, timeout=10
+interval: 86400
