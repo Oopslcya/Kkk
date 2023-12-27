@@ -1,10 +1,13 @@
 name: WPShuiyuan
 desc: WPS解锁本地会员
-icon: https://raw.githubusercontent.com/deezertidal/private/main/icons/wps.png
+icon: https://raw.githubusercontent.com/Keze7/Kaze/main/Loon/E644FFEC-74F3-4B40-BFD4-CB6FB168E515.png
+
 http:
   mitm:
-    - "account.wps.cn"
-    - "*.wps.cn"
+    hostname:
+      - "account.wps.cn"
+      - "*.wps.cn" 
+
   script:
     - match: ^https?:\/\/(account|drive|vas|userinfo.docer)\.wps\.cn\/(.*api\/(v3\/(mine\/vips|spaces)|users\/\d+\/overview|v1\/list_purchase_info)|user\/v1\/vip_dl_times)
       script-path: https://raw.githubusercontent.com/yqc007/QuantumultX/master/WPSuperVIPuserCrack.js
@@ -12,12 +15,19 @@ http:
       type: http-response
       tag: WPSuperVIPuserCrack
       timeout: 10
+
     - match: ^https?:\/\/(mobile|client|vas|download)(\.docer)?\.wps.cn\/(android\/mb\/buy_info|api\/v1\/mobile\/mb\/detail|query\/api\/v1\/list_privilege_info|download\/adapter\/v1\/mb)
       script-path: https://raw.githubusercontent.com/yqc007/QuantumultX/master/WPSuperVIPowerCrack.js
       requires-body: false
       type: http-request
       tag: WPSuperVIPowerCrack
       timeout: 10
+    - match: https?:\/\/.*?accountl.wpsl.(com/cn) (:\d+)?\/apil/users\/\w+\/overview$
+      name: WPShuiyuan1
+      type: response
+      require-body: true
+      timeout: 10
+
 script-providers:
   WPShuiyuan1:
     url: https://raw.githubusercontent.com/I-am-R-E/Functional-Store-Hub/Master/WPSOffice/Script/WS.js
